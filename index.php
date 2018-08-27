@@ -8,6 +8,8 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title>UTP - Schedule</title>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="JS/GetEmails.js"></script>
         <link rel="stylesheet" type="text/css" href="Css/Index.css"/>
     </head>
     <body>
@@ -17,11 +19,12 @@ and open the template in the editor.
         <div id="Formulario">
         <form method="post" action="DB/Selector.php">
             <label for="Para">Para: </label><br>
-            <input type="email" name="correos" placeholder="example@server.com"/><br>   
+            <input id="correos" type="email" name="correos" placeholder="example@server.com"/><br>
+            <?php include 'DB/Selector.php'; ?>
             <label for="Asunto">Asunto: </label><br>
             <input name="asunto" type="text" placeholder="Asunto"/><br>
             <textarea name="mensaje" id="mensaje" rows="4" cols="50" placeholder="Escriba su mensaje..."></textarea><br>
-            <input type="submit" name="enviar" value="Enviar"/>
+            <input type="submit" name="enviar" value="Enviar"/> 
         </form>
         </div>
         
