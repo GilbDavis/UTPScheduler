@@ -17,9 +17,9 @@ and open the template in the editor.
         <h1>Bienvenido al sistema de Notificacion de la UTP - Centro Regional de Bocas del Toro</h1><br>
         
         <div id="Formulario">
-        <form method="post" action="DB/Selector.php">
+            <form method="post" action="DB/EmailSender.php">
             <label for="Para">Para: </label><br>
-            <input id="correos" type="email" name="correos" placeholder="example@server.com"/><br>
+            <input id="correos" type="text" name="correos" placeholder="example@server.com"/><br>
             <?php include 'DB/Selector.php'; ?>
             <label for="Asunto">Asunto: </label><br>
             <input name="asunto" type="text" placeholder="Asunto"/><br>
