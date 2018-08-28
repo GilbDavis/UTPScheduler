@@ -13,7 +13,7 @@
     
     $success = false;
     if(isset($_POST["enviar"])){
-        $correo = filter_input(INPUT_POST, "correos");
+        $correo = array(filter_input(INPUT_POST, "correos"));
         $asunto = filter_input(INPUT_POST, "asunto");
         $mensaje = filter_input(INPUT_POST, "mensaje");
         
