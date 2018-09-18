@@ -9,7 +9,7 @@ $(document).ready(function(){
     var corr = document.getElementById('correos');
     
     lista.onchange = function(){
-        corr.value += " " + lista.options[lista.selectedIndex].text;
+        corr.value += lista.options[lista.selectedIndex].text + ", ";
     }
 });
 
