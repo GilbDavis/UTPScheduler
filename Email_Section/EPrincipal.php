@@ -11,7 +11,7 @@ and open the template in the editor.
         <title>UTP - Schedule</title>
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="../JS/GetEmails.js"></script>
-        <link rel="stylesheet" type="text/css" href="../Css/Index.css"/>
+        <link rel="stylesheet" type="text/css" href="../Css/notificacion.css"/>
     </head>
     <body>
         

@@ -1,32 +1,42 @@
+<?php include('Login/Autenticacion.php'); ?>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
+        <title>Davis SFW - AdminLogin</title>
+        <link rel="stylesheet" type="text/css" href="Css/Logins.css"/>
         <meta charset="UTF-8">
-        <title>UTP - Schedule</title>
-        <script src="http://code.jquery.com/jquery-latest.js"></script>
-        <script src="JS/GetEmails.js"></script>
-        <link rel="stylesheet" type="text/css" href="Css/Index.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         
-        <h1>Bienvenido al sistema de Notificacion de la UTP - Centro Regional de Bocas del Toro</h1><br>
-        
-        <div id="Formulario">
-            <form method="post" action="Email_Section/EmailSender.php">
-            <label for="Para">Para: </label><br>
-            <input id="correos" type="text" name="correos" placeholder="example@server.com"/><br>
-            <?php include 'Email_Section/Selector.php'; ?>
-            <label for="Asunto">Asunto: </label><br>
-            <input name="asunto" type="text" placeholder="Asunto"/><br>
-            <textarea name="mensaje" id="mensaje" rows="4" cols="50" placeholder="Escriba su mensaje..."></textarea><br>
-            <input type="submit" name="enviar" value="Enviar"/> 
-        </form>
+        <div class="loginbox">
+            <img src="Imagenes/user.png" alt="usuario" class="avatar"/>
+            <h1>Inicio de Sesión</h1>
+            
+            <form action="index.php" method="post">
+                <?php include ('Login/erroresLogin.php'); ?><style><?php include 'Css/Logins.css'; ?></style>
+                <p>Cédula:</p>
+                <input type="text" name="cedula" placeholder="Ingrese su cédula..."/>
+                <p>Contraseña:</p>
+                <input type="password" name="contrasena" placeholder="*******"/>
+                <input type="submit" name="submit" value="Iniciar Sesion"/>
+            </form>
         </div>
+        
+       <!-- Lineth / Cirilo, el footer puedes crearlo en un archivo php y añadirlo a todas las paginas web con un include
+       
+            <footer class="foot">
+        <center>
+            <a href="https://www.instagram.com/davis_0297/" target="_blank"><img src="../Imagenes/instagram-logo.png" alt="Instagram"/></a>
+            <a href="https://www.facebook.com" target="_blank"><img src="../Imagenes/facebook-logo-button.png" alt="Facebook"/></a>
+            <a href="https://api.whatsapp.com/send?phone=50763737013" target="_blank"><img src="../Imagenes/whatsapp.png" alt="Whatsapp"/></a>
+            <a href="https://www.linkedin.com/in/gilbertodavis/" target="_blank"><img src="../Imagenes/linkedin.png" alt="Linkedin"/></a>
+        <center>
+    </footer> -->
+        
+    </body>
+    
+</html>
         
     </body>
 </html>
