@@ -13,7 +13,7 @@
             <img src="Imagenes/user.png" alt="usuario" class="avatar"/>
             <h1>Inicio de Sesión</h1>
             
-            <form action="index.php" method="post">
+            <form action="index.php" method="POST">
                 <?php include ('Login/erroresLogin.php'); ?><style><?php include 'Css/Logins.css'; ?></style>
                 <p>Cédula:</p>
                 <input type="text" name="cedula" placeholder="Ingrese su cédula..."/>

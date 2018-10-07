@@ -8,11 +8,9 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Davis SFW - Menu Administrador</title>
+        <title>LEMS - Menú Administrador</title>
         <link type="text/css" rel="stylesheet" href="../Css/Menu.css"/>
         <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
-        <script src="http://code.jquery.com/jquery-latest.js"></script>
-        <script src="../JS/menuHeader.js"></script>
         <style>
             header, body{
                 font-family: 'Lato';
@@ -23,8 +21,9 @@ and open the template in the editor.
         
         <header>
             <div class="wrapper">
+                <img src='../Imagenes/logo-lems.jpeg' alt='Logo LEMS'/>
                 <div class="logo">
-                    <a href="../SeccionAdmin/AdminMenu.php">Davis Supermarket SFW</a>
+                    <a href="../SeccionAdmin/AdminMenu.php">Agenda LEMS ©2018</a>
                 </div>
                 <nav>
                     <a href='#'><?php echo $_SESSION['user_nom'] . ' ' . $_SESSION['user_ape']; ?></a>
@@ -32,9 +31,13 @@ and open the template in the editor.
                 </nav>
             </div>
         </header>
-        
-        <section class="contenido wrapper">
-            
+       
+        <section class="recordatorio">
+            <a href='#'>Crear recordatorio</a>
+        </section>
+
+        <section class="recordatorio2">
+            <a href="*">Mi Agenda</a>
         </section>
 
        <!-- <footer class="foot"><center>
