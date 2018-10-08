@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -19,25 +18,22 @@ and open the template in the editor.
     </head>
     <body>
         
-        <header>
-            <div class="wrapper">
-                <img src='../Imagenes/logo-lems.jpeg' alt='Logo LEMS'/>
-                <div class="logo">
-                    <a href="../SeccionAdmin/AdminMenu.php">Agenda LEMS ©2018</a>
-                </div>
-                <nav>
-                    <a href='#'><?php echo $_SESSION['user_nom'] . ' ' . $_SESSION['user_ape']; ?></a>
-                    <a href="../Login/CerrarSesion.php">Cerrar Sesion</a>
-                </nav>
-            </div>
-        </header>
+        <?php require '../Header_Footer/Header.php'; ?>
        
         <section class="recordatorio">
-            <a href='#'>Crear recordatorio</a>
+            <a href='../Email_Section/EPrincipal.php'>Crear recordatorio</a>
         </section>
 
-        <section class="recordatorio2">
+        <section class="recordatorio">
             <a href="*">Mi Agenda</a>
+        </section>
+        
+        <section class="recordatorio">
+            <a href="../Perfil/PaginaPerfil.php">Mi perfil</a>
+        </section>
+        
+        <section class="recordatorio">
+            <a href="#">Agregar Personal</a>
         </section>
 
        <!-- <footer class="foot"><center>

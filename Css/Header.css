@@ -1,0 +1,67 @@
+/* 
+    Created on : 7/10/2018, 06:09:45 PM
+    Author     : Gilberto Davis
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext);
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    width: 100%;
+    overflow: hidden;
+    background: #11a1d8;
+    margin-bottom: 20px;
+}
+
+.wrapper{
+    width: 90%;
+    max-width: 100%;;
+    margin-bottom: -20px;
+    overflow: hidden;
+}
+
+header .logo{
+    color: #f2f2f2;
+    font-size: 50px;
+    line-height: 200px;
+    float: left;
+}
+
+.wrapper img{
+    border-radius: 50%;
+    max-width: 15%;
+    height: auto;
+    float: left;
+    margin: 30px 25px 0 20px;
+}
+
+header .logo a{
+    text-decoration: none;
+    color: #fff;
+}
+
+header nav{
+    float: right;
+    line-height: 210px;
+}
+
+header nav a{
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    line-height: normal;
+    font-size: 20px;
+    transition: all 500ms ease;
+}
+
+header nav a:hover{
+    background: deepskyblue;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 25px;
+}

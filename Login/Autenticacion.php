@@ -42,5 +42,6 @@
                 array_push($errors, "El e-mail/contraseña son invalidos");
             }
         }
+        $conn->close();
     }
 ?>
