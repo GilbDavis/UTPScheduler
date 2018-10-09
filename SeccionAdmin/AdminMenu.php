@@ -17,9 +17,9 @@ and open the template in the editor.
         </style>
     </head>
     <body>
-        
+
         <?php require '../Header_Footer/Header.php'; ?>
-       
+
         <section class="recordatorio">
             <a href='../Email_Section/EPrincipal.php'>Crear recordatorio</a>
         </section>
@@ -27,13 +27,13 @@ and open the template in the editor.
         <section class="recordatorio">
             <a href="*">Mi Agenda</a>
         </section>
-        
+
         <section class="recordatorio">
             <a href="../Perfil/PaginaPerfil.php">Mi perfil</a>
         </section>
-        
+
         <section class="recordatorio">
-            <a href="#">Agregar Personal</a>
+            <a href="../SeccionAdmin/AgregarPersonal.php">Agregar Personal</a>
         </section>
 
        <!-- <footer class="foot"><center>
@@ -42,6 +42,6 @@ and open the template in the editor.
             <a href="https://api.whatsapp.com/send?phone=50763737013" target="_blank"><img src="../Imagenes/whatsapp.png" alt="Whatsapp"/></a>
             <a href="https://www.linkedin.com/in/gilbertodavis/" target="_blank"><img src="../Imagenes/linkedin.png" alt="Linkedin"/></a>
             <center></footer> -->
-            
+
     </body>
 </html>
