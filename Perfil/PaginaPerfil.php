@@ -11,7 +11,8 @@ and open the template in the editor.
         <title><?php echo 'LEMS - ' . $_SESSION['user_nom'] . ' ' . $_SESSION['user_ape']; ?></title>
     </head>
     <body>
-        
+
         <?php require '../Header_Footer/Header.php'; ?>
+        
     </body>
 </html>

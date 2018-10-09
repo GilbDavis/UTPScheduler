@@ -1,7 +1,7 @@
-<?php 
+<?php
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
-    }; 
+    };
 ?>
 <!DOCTYPE html>
 <!--
@@ -23,7 +23,7 @@ and open the template in the editor.
                     <a href="../SeccionAdmin/AdminMenu.php">Agenda LEMS ©2018</a>
                 </div>
                 <nav>
-                    <a href='#'><?php echo $_SESSION['user_nom'] . ' ' . $_SESSION['user_ape']; ?></a>
+                    <a href='../Perfil/PaginaPerfil.php'><?php echo $_SESSION['user_nom'] . ' ' . $_SESSION['user_ape']; ?></a>
                     <a href="../Login/CerrarSesion.php">Cerrar Sesion</a>
                 </nav>
             </div>

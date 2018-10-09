@@ -17,7 +17,7 @@
             array_push($errors, "Se requiere su contraseña");
         }
         if(count($errors) == 0){
-            $sql = "SELECT nombre, apellido, cedula, clave, rol FROM Usuarios WHERE"
+            $sql = "SELECT id_usuario, nombre, apellido, cedula, clave, rol FROM Usuarios WHERE"
                     . " cedula = '$cedula' AND clave = '$contrasena'";
             $resultado = $conn->query($sql);
             $row = $resultado->fetch_assoc();
@@ -25,6 +25,7 @@
             if($resultado->num_rows > 0){
                 if($row['rol'] == 'Admin'){
                     session_start();
+                    $_SESSION['user_id'] = $row['id_usuario'];
                     $_SESSION['user_ced'] = $row['cedula'];
                     $_SESSION['user_nom'] = $row['nombre'];
                     $_SESSION['user_ape'] = $row['apellido'];
@@ -32,6 +33,7 @@
                 }else{
                     if($row['rol'] == 'Member'){
                         session_start();
+                        $_SESSION['user_id'] = $row['id_usuario'];
                         $_SESSION['user_ced'] = $row['cedula'];
                         $_SESSION['user_nom'] = $row['nombre'];
                         $_SESSION['user_ape'] = $row['apellido'];

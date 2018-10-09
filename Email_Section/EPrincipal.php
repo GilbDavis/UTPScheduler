@@ -29,7 +29,7 @@ and open the template in the editor.
                 <span class="checkmark"></span>
                 ¿Desea que este recordatorio se repita?
             </label>
-            <input type="submit" name="enviar" value="Enviar"/> 
+            <input id="formButton" type="submit" name="enviar" value="Enviar"/> 
         </form>
         </div>
         

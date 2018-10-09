@@ -41,7 +41,7 @@ p{
     width: 100%;
 }
 
-#Formulario input[type=submit]{
+#formButton{
     width: 100%;
     color: white;
     font-size: 16px;
@@ -51,6 +51,10 @@ p{
     border-radius: 4px;
     cursor: pointer;
     border: none;
+}
+
+#formButton:hover{
+    background-color: #2196F3;
 }
 
 .container {
