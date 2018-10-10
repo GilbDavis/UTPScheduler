@@ -10,11 +10,7 @@ and open the template in the editor.
         <title>LEMS - Menú Administrador</title>
         <link type="text/css" rel="stylesheet" href="../Css/Menu.css"/>
         <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
-        <style>
-            header, body{
-                font-family: 'Lato';
-            }
-        </style>
+        <style> header, body{font-family: 'Lato';}</style>
     </head>
     <body>
 
