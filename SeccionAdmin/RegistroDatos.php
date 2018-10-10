@@ -2,7 +2,7 @@
   require '../Conexion/Connection.php';
 
   //Definir las variables
-  $errors = array();
+  $errores = array();
   $nombre = "";
   $apellido = "";
   $cedula = "";
@@ -24,25 +24,25 @@
     $rol = "Member";
     //Manejo de errores del formulario
     if(empty($nombre)){
-      array_push($errors, "Se requiere su nombre");
+      array_push($errores, "Se requiere su nombre");
     }
     if(empty($apellido)){
-      array_push($errors, "Se requiere su apellido");
+      array_push($errores, "Se requiere su apellido");
     }
     if(empty($cedula)){
-      array_push($errors, "Se requiere su Cedula!");
+      array_push($errores, "Se requiere su Cedula!");
     }
     if(empty($cargo)){
-      array_push($errors, "Ingrese su cargo");
+      array_push($errores, "Ingrese su cargo");
     }
     if(empty($contrasena)){
-      array_push($errors, "Ingrese su contraseña");
+      array_push($errores, "Ingrese su contraseña");
     }
     if(empty($recontrasena)){
-      array_push($errors, "Se requiere que verifique su contraseña");
+      array_push($errores, "Se requiere que verifique su contraseña");
     }
     //Si no hay errores se registra normalmente al usuario.
-    if(count($errors) == 0){
+    if(count($errores) == 0){
       try{
         $sql = "INSERT INTO usuarios(nombre, apellido, cedula, correo, clave,
            rol, cargo) VALUES ('$nombre', '$apellido', '$cedula', '$correo', '$recontrasena',
@@ -59,7 +59,7 @@
       }
 
     }else{
-      array_push($errors, "");
+      array_push($errores, "No ha ingresado ningun dato!");
     }
   }
   $conn->close();

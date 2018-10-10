@@ -17,8 +17,12 @@
 
         <h1>Formulario de Registro</h1>
         <div class="Register-Container">
-          <form method="post" id="registro" action="RegistroDatos.php">
+          <form method="post" id="registro" action="AgregarPersonal.php">
             <h2>Registrar personal</h2>
+            <?php include ('erroresRegistro.php'); ?>
+            <style>.error{font-size:16px; color: #a94442; margin-bottom: 5px;
+              border-radius: 5px; border: 1px solid #a94442; margin-left: 20px;
+              margin-right: 100px; text-align: left; background: #f2dede;}</style>
             <label>Nombre: </label><br>
             <input class="inputs" type="text" name="nombre" placeholder="Nombre..."/><br>
             <label>Apellido: </label><br>
