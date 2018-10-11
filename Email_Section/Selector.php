@@ -1,8 +1,9 @@
 <?php
 
     include '../Conexion/Connection.php';
-    
-    $result = $conn->query("SELECT * FROM Usuarios");
+    //Se consultan los correos guardados en la tabla
+    $result = $conn->query("SELECT correo FROM Usuarios");
+    //Se crea un selection con opciones para que el usuario pueda elejir
     echo '<label for="Selectemail">Correos electronicos: </label>';
     echo '<select id="correosmysql">\n';
     echo '<option value ="0">Correos...</option>';
@@ -10,8 +11,7 @@
         echo '<option value="' . $row['id_usuario'] . '">' . $row['correo'] . "</option>";
     }
     echo "</select>";
-    
+
     $conn->close();
 
 ?>
-

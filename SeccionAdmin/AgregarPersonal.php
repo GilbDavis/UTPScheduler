@@ -19,6 +19,8 @@
         <div class="Register-Container">
           <form method="post" id="registro" action="AgregarPersonal.php">
             <h2>Registrar personal</h2>
+            <!--Incluyo el archivo erroresRegistro para que se muestre en caso de que ocurra alguno
+            Agrego el estilo aqui para que sea exclusivo para este formulario-->
             <?php include ('erroresRegistro.php'); ?>
             <style>.error{font-size:16px; color: #a94442; margin-bottom: 5px;
               border-radius: 5px; border: 1px solid #a94442; margin-left: 20px;
