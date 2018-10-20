@@ -6,7 +6,7 @@
     //Se crea un <select> para mostrar los asuntos elejible en el formulario de
     //creacion de recordatorios
     echo '<label for="Asunto">Asunto: </label>';
-    echo '<select id="asunto">';
+    echo '<select id="asunto" name="asunto">';
     echo '<option value="0">Asuntos...</option>';
     //Mientras que haya valores el while lo reccorre y crear un tag <option>
     //Para mostrarlo en el combobox

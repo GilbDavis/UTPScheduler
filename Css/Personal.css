@@ -25,7 +25,7 @@ h2 {
 
 .Register-Container {
   width: 500px;
-  margin: 0px 0px 0px 430px;
+  margin: 0px auto;
   color: white;
   font-size: 18px;
   padding: 20px;

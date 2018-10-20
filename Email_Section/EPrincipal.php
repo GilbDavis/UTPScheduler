@@ -1,3 +1,5 @@
+<?php include 'GuardarRecordatorio.php'; ?>
+
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -24,7 +26,7 @@ and open the template in the editor.
         <?php require '../Header_Footer/Header.php'; ?>
 
         <div id="Formulario">
-            <form method="post" action="DB/EmailSender.php">
+            <form method="post" action="EPrincipal.php">
             <label for="Para">Para: </label><br>
             <input id="correos" type="text" name="correos" placeholder="example@server.com" required/><br>
             <?php include '../Email_Section/Selector.php'; ?>
@@ -32,7 +34,7 @@ and open the template in the editor.
             <div class="form-group">
                   <label class="control-label">Hora de recordatorio</label>
                   <div class='input-group date' id='datetimepicker1'>
-                     <input type='text' id="form-control" required/>
+                     <input type='text' id="form-control" name="fecha" required/>
                     <span id="calendario" class="input-group-addon">
                      <span class="glyphicon glyphicon-calendar"></span>
                     </span>
