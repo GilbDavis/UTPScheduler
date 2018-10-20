@@ -21,7 +21,6 @@
     $cargo = filter_input(INPUT_POST, 'cargo');
     $contrasena = password_hash(filter_input(INPUT_POST, 'contrasena'), PASSWORD_DEFAULT);
     $recontrasena = password_hash(filter_input(INPUT_POST, 'contrasenaverify'), PASSWORD_DEFAULT);
-    $rol = "Member";
     //Manejo de errores del formulario
     if(empty($nombre)){
       array_push($errores, "Se requiere su nombre");

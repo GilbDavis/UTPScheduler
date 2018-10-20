@@ -10,9 +10,8 @@
     echo '<option value="0">Asuntos...</option>';
     //Mientras que haya valores el while lo reccorre y crear un tag <option>
     //Para mostrarlo en el combobox
-    </option>
     while($row = $result->fetch_assoc()){
-        echo '<option value="' . $row['id_usuario'] . '">' . $row['asunto'] . '</option>';
+        echo '<option value="' . $row['id_asunto'] . '">' . $row['asunto'] . '</option>';
     }
     echo '</select>';
 

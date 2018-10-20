@@ -3,7 +3,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
-/* 
+/*
     Created on : 26/08/2018, 06:29:23 PM
     Author     : Vivia Jones
 */
@@ -39,6 +39,12 @@ p{
 #mensaje{
     padding-bottom: 120px;
     width: 100%;
+    margin-top: 30px;
+}
+
+textarea{
+  resize: none;
+  overflow: scroll;
 }
 
 #formButton{
@@ -62,7 +68,7 @@ p{
   position: relative;
   padding-left: 35px;
   margin-bottom: 20px;
-  margin-top: 20px;
+  margin-top: 15px;
   cursor: pointer;
   font-size: 22px;
   -webkit-user-select: none;
@@ -73,7 +79,7 @@ p{
 
 /* Hide the browser's default checkbox */
 .container input {
-  position: absolute;
+  position: relative;
   opacity: 0;
   cursor: pointer;
   height: 0;
@@ -123,4 +129,12 @@ p{
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+.form-group span{
+  
+}
+
+.form-group{
+  margin-top: 20px;
 }

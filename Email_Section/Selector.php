@@ -2,7 +2,7 @@
 
     include '../Conexion/Connection.php';
     //Se consultan los correos guardados en la tabla
-    $result = $conn->query("SELECT correo FROM Usuarios");
+    $result = $conn->query("SELECT id_usuario, correo FROM Usuarios");
     //Se crea un selection con opciones para que el usuario pueda elejir
     echo '<label for="Selectemail">Correos electronicos: </label>';
     echo '<select id="correosmysql">\n';

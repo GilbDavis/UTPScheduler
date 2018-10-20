@@ -26,20 +26,20 @@
               border-radius: 5px; border: 1px solid #a94442; margin-left: 20px;
               margin-right: 100px; text-align: left; background: #f2dede;}</style>
             <label>Nombre: </label><br>
-            <input class="inputs" type="text" name="nombre" placeholder="Nombre..."/><br>
+            <input class="inputs" type="text" name="nombre" placeholder="Nombre..."/ title="Se requiere este campo" required><br>
             <label>Apellido: </label><br>
-            <input class="inputs" type="text" name="apellido" placeholder="Apellido..."/><br>
+            <input class="inputs" type="text" name="apellido" placeholder="Apellido..." required/><br>
             <label>Cedula: </label><br>
-            <input class="inputs" type="text" name="cedula" placeholder="0-000-0000"/><br>
+            <input class="inputs" type="text" name="cedula" placeholder="0-000-0000" required/><br>
             <label>Correo: </label><br>
-            <input class="inputs" type="email" name="correo" placeholder="ejemplo@example.com"/><br>
+            <input class="inputs" type="email" name="correo" placeholder="ejemplo@example.com" required/><br>
             <label>Cargo: </label><br>
-            <input class="inputs" type="text" name="cargo" placeholder="Cargo..."/><br>
+            <input class="inputs" type="text" name="cargo" placeholder="Cargo..." required/><br>
             <label>Contraseña: </label><br>
-            <input id="contra" class="inputs" type="password" name="contrasena" placeholder="123456"/><br>
+            <input id="contra" class="inputs" type="password" name="contrasena" placeholder="123456" required/><br>
             <label>Confirmar contraseña: </label><br>
             <input id="recontra" class="inputs" type="password" name="contrasenaverify"
-             placeholder="123456" onchange="checkPasswordMatch()"/><br>
+             placeholder="123456" onchange="checkPasswordMatch()" required/><br>
             <div class="contramatch" id="checkpassword"></div>
             <input id="btnRegistrar" type="submit" name="submit" value="Registrar Personal"/>
           </form>
