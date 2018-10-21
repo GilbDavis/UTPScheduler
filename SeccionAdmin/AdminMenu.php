@@ -21,7 +21,7 @@ and open the template in the editor.
         </section>
 
         <section class="recordatorio">
-            <a href="*">Mi Agenda</a>
+            <a href="../Calendario/Calendario.php">Mi Agenda</a>
         </section>
 
         <section class="recordatorio">
