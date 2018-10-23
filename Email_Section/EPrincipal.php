@@ -26,7 +26,7 @@ and open the template in the editor.
         <?php require '../Header_Footer/Header.php'; ?>
 
         <div id="Formulario">
-            <form method="post" action="EPrincipal.php">
+            <form method="post" action="EPrincipal.php" autocomplete="off">
             <label for="Para">Para: </label><br>
             <input id="correos" type="text" name="correos" placeholder="example@server.com" required/><br>
             <?php include '../Email_Section/Selector.php'; ?>

@@ -12,7 +12,7 @@ and open the template in the editor.
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="../Css/calendar.css">
-        <script type="text/javascript" src="../JS/locale/es-MX.js"></script>
+        <script type="text/javascript" src="../JS/language/es-MX.js"></script>
     </head>
     <body>
         <?php require '../Header_Footer/Header.php'; ?>
