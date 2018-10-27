@@ -17,7 +17,7 @@
 
         <h1>Formulario de Registro</h1>
         <div class="Register-Container">
-          <form method="post" id="registro" action="AgregarPersonal.php">
+          <form method="post" id="registro" action="AgregarPersonal.php" autocomplete="off">
             <h2>Registrar personal</h2>
             <!--Incluyo el archivo erroresRegistro para que se muestre en caso de que ocurra alguno
             Agrego el estilo aqui para que sea exclusivo para este formulario-->

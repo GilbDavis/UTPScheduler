@@ -1,33 +1,26 @@
-.navcontainer{
-  margin-top: 10%;
-  float: left;
+input.hidden {
+  position: absolute;
+  left: -9999px;
 }
 
-.navcontainer ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 200px;
-    background-color: #f1f1f1;
+#profile-image1 {
+  cursor: pointer;
+  border: 2px solid #03b1ce;
 }
 
-.navcontainer li{
-  text-align: center;
+.tital {
+  font-size: 16px;
+  font-weight: 500;
 }
 
-.navcontainer li a {
-    display: block;
-    color: #000;
-    padding: 8px 16px;
-    text-decoration: none;
+.bot-border {
+  border-bottom: 1px #f8f8f8 solid;
+  margin: 5px 0 5px 0
 }
 
-.navcontainer li a:hover{
-    background-color: #555;
+.panel > .panel-heading {
+    background-image: none;
+    background-color: #11a1d8;
     color: white;
-}
 
-.navcontainer li a.active {
-    background-color: #4CAF50;
-    color: white;
 }
