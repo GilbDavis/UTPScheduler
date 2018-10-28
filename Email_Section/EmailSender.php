@@ -1,11 +1,6 @@
 <?php
 
-    $server = 'localhost';
-    $user = 'root';
-    $pass = "0631212";
-    $db = "Schedule";
-    
-    $conn = new mysqli($server, $user, $pass, $db) or die("<p>No se pudo conectar</p>");
+    include '../Conexion/Connection.php';
     
     //Codigo para enviar correo electronico
     //Para realizar esto se debe modificar el mail function en php.ini

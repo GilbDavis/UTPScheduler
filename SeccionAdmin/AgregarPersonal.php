@@ -36,10 +36,10 @@
             <label>Cargo: </label><br>
             <input class="inputs" type="text" name="cargo" placeholder="Cargo..." required/><br>
             <label>Contraseña: </label><br>
-            <input id="contra" class="inputs" type="password" name="contrasena" placeholder="123456" required/><br>
+            <input id="contra" class="inputs" type="password" name="contrasena" placeholder="***********" required/><br>
             <label>Confirmar contraseña: </label><br>
             <input id="recontra" class="inputs" type="password" name="contrasenaverify"
-             placeholder="123456" onchange="checkPasswordMatch()" required/><br>
+             placeholder="***********" onchange="checkPasswordMatch()" required/><br>
             <div class="contramatch" id="checkpassword"></div>
             <input id="btnRegistrar" type="submit" name="submit" value="Registrar Personal"/>
           </form>

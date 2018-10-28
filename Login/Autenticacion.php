@@ -29,7 +29,7 @@
           //P.D: Este codigo esta mal optimizado, a futuro debo cambiar esto ya que esta utilizando
           //recursos innnecesariamente
           if (password_verify($contrasena, $contraup)) {
-              $sql = "SELECT id_usuario, nombre, apellido, cedula, clave, rol FROM Usuarios WHERE"
+              $sql = "SELECT id_usuario, nombre, apellido, cedula, clave, rol, cargo, correo FROM Usuarios WHERE"
                     . " cedula = '$cedula' AND clave = '$contraup'";
               $resultado = $conn->query($sql);
               $row = $resultado->fetch_assoc();
@@ -42,6 +42,9 @@
                       $_SESSION['user_ced'] = $row['cedula'];
                       $_SESSION['user_nom'] = $row['nombre'];
                       $_SESSION['user_ape'] = $row['apellido'];
+                      $_SESSION['user_corr'] = $row['correo'];
+                      $_SESSION['user_cargo'] = $row['cargo'];
+                      $_SESSION['user_rol'] = $row['rol'];
                       header('Location: SeccionAdmin/AdminMenu.php');
                   } else {
                       if ($row['rol'] == 'Member') {
@@ -50,10 +53,15 @@
                           $_SESSION['user_ced'] = $row['cedula'];
                           $_SESSION['user_nom'] = $row['nombre'];
                           $_SESSION['user_ape'] = $row['apellido'];
+                          $_SESSION['user_corr'] = $row['correo'];
+                          $_SESSION['user_cargo'] = $row['cargo'];
+                          $_SESSION['user_rol'] = $row['rol'];
                           header();
                       }
                   }
               }
+              $conn->close();
+              $row->close();
           } else {
               array_push($errors, "El e-mail/contraseña son invalidos");
           }

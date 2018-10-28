@@ -25,7 +25,7 @@ and open the template in the editor.
         </section>
 
         <section class="recordatorio">
-            <a href="../Perfil/PaginaPerfil.php">Mi perfil</a>
+            <a href="#">Editar Alarma</a>
         </section>
 
         <section class="recordatorio">
