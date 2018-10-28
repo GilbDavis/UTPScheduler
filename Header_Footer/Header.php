@@ -22,6 +22,8 @@ and open the template in the editor.
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
+        <style> header, body{font-family: 'Lato';}</style>
     </head>
     <body>
         <header>
@@ -85,7 +87,9 @@ and open the template in the editor.
                                             <div class="clearfix"></div>
                                             <div class="bot-border"></div>
 
-                                            <div class="col-sm-5 col-xs-6 tital " >Cedula:</div><div class="col-sm-7"> <?php echo $_SESSION['user_ced']; ?></div>
+                                            <div class="col-sm-5 col-xs-6 tital " >Cedula:</div><div class="col-sm-7"> <?php $split =
+                                            explode("-", $_SESSION['user_ced']); $union = array(str_pad($split[0], 2, 0, STR_PAD_LEFT), str_pad($split[1], 4, 0, STR_PAD_LEFT), str_pad($split[2], 5, 0, STR_PAD_LEFT));
+                                            echo implode("-", $union); ?></div>
                                             <div class="clearfix"></div>
                                             <div class="bot-border"></div>
 

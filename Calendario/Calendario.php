@@ -13,6 +13,8 @@ and open the template in the editor.
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="../Css/calendar.css">
         <script type="text/javascript" src="../JS/language/es-MX.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
+        <style> header, body{font-family: 'Lato';}</style>
     </head>
     <body>
         <?php require '../Header_Footer/Header.php'; ?>
