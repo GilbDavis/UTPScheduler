@@ -10,6 +10,7 @@ and open the template in the editor.
         <title>LEMS - Menú Administrador</title>
         <link type="text/css" rel="stylesheet" href="../Css/Menu.css"/>
         <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
+        <link rel="shortcut icon" href="../Imagenes/logo-lems.jpeg" type="image/x-icon"/>
         <style> header, body{font-family: 'Lato';}</style>
     </head>
     <body>
@@ -21,11 +22,11 @@ and open the template in the editor.
         </section>
 
         <section class="recordatorio">
-            <a href="../Calendario/Calendario.php">Mi Agenda</a>
+            <a href="../Calendario/Calendario.php">Agenda</a>
         </section>
 
         <section class="recordatorio">
-            <a href="#">Editar Alarma</a>
+            <a href="#">Editar Recordatorio</a>
         </section>
 
         <section class="recordatorio">

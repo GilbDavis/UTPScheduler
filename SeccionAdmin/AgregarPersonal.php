@@ -10,6 +10,7 @@
         <style> header, body{font-family: 'Lato';}</style>
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="../JS/ContraseñaVerificar.js"></script>
+        <link rel="shortcut icon" href="../Imagenes/logo-lems.jpeg" type="image/x-icon"/>
     </head>
     <body>
 
