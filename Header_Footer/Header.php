@@ -30,7 +30,7 @@ and open the template in the editor.
             <div class="wrapper">
                 <img src='../Imagenes/logo-lems.jpeg' alt='Logo LEMS'/>
                 <div class="logo">
-                    <a href="../SeccionAdmin/AdminMenu.php">Agenda LEMS ©2018</a>
+                    <a href="<?php if($_SESSION['user_rol'] == 'Admin'){ echo '../SeccionAdmin/AdminMenu.php'; }else if($_SESSION['user_rol'] == 'Member'){ echo '../SeccionMember/MemberMenu.php'; } ?>">Agenda LEMS ©2018</a>
                 </div>
                 <nav>
                     <a data-toggle="modal" data-target="#myModal"><?php echo $_SESSION['user_nom'] . ' ' . $_SESSION['user_ape']; ?></a>
