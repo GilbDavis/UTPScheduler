@@ -27,7 +27,6 @@
                     $correos = implode(", ", $correos);
                     if(mail($correos, $result['asunto'], $result['mensaje'])){
                         $query_anterior = $conn->query("UPDATE notificacion SET id_estado = 2 WHERE id_notificacion = " . $result['idnotificacion'] . ";");
-                        echo "Entro al primer IF";
                     }
                 }catch (Exception $ex){
                     throw $ex->getMessage();
@@ -42,7 +41,6 @@
                     $correos = implode(", ", $correos);
                     if(mail($correos, $result['asunto'], $result['mensaje'])){
                         $query_repeticion = $conn->query("UPDATE notificacion SET id_estado = 3 WHERE id_notificacion = " . $result['idnotificacion'] . ";");
-                        echo "Entro al segundo IF";
                     }
                 }catch(Exception $ex){
                     throw $ex->getMessage();
@@ -55,9 +53,8 @@
                 try{
                     $correos = explode(",", $result['correos']);
                     $correos = implode(", ", $correos);
-                    if(mail($correos, $result['asunto'], $mensaje)){
+                    if(mail($correos, $result['asunto'], $result['mensaje'])){
                         $query_principal = $conn->query("UPDATE notificacion SET id_estado = 4 WHERE id_notificacion = " . $result['idnotificacion'] . ";");
-                        echo "Entro al tercer IF";
                     }
                 }catch(Exception $ex){
                     throw $ex->getMessage();
