@@ -1,6 +1,6 @@
 <?php
 
-    include '../Conexion/Connection.php';
+    include 'C:/xampp/htdocs/ScheduleNot/Conexion/Connection.php';
     
     //Codigo para enviar correo electronico
     //Para realizar esto se debe modificar el mail function en php.ini
@@ -21,14 +21,14 @@
         $result = $conn->query($query)->fetch_assoc();
         //Codigo para verificar si las fechas concuerdan con el actual para enviar los correos electronicos
         if($result){
-            if($result['fAnterior'] == $fecha_hora && $result['idestado'] == 1 || $result['fAnterior'] < $fecha_hora && $result['idestado'] == 1){
+            if(strtotime($result['fAnterior']) == strtotime($fecha_hora) && $result['idestado'] == 1 || strtotime($result['fAnterior']) < strtotime($fecha_hora) && $result['idestado'] == 1){
                 try{
                     $correos = explode(",", $result['correos']);
                     $correos = implode(", ", $correos);
                     if(mail($correos, $result['asunto'], $result['mensaje'])){
                         $query_anterior = $conn->query("UPDATE notificacion SET id_estado = 2 WHERE id_notificacion = " . $result['idnotificacion'] . ";");
+                        echo "Entro al primer IF";
                     }
-                    echo "Entro al primer IF";
                 }catch (Exception $ex){
                     throw $ex->getMessage();
                 }
@@ -36,14 +36,14 @@
             //Obtener el id_estado actualizado
             $actualizar_idestado = $conn->query("SELECT id_estado FROM notificacion WHERE id_notificacion = " . $result['idnotificacion'] . ";")->fetch_assoc();
 
-            if($result['fRepeticion'] == $fecha_hora && $actualizar_idestado['id_estado'] == 2 || $result['fRepeticion'] < $fecha_hora && $actualizar_idestado['id_estado'] == 2){
+            if(strtotime($result['fRepeticion']) == strtotime($fecha_hora) && $actualizar_idestado['id_estado'] == 2 || strtotime($result['fRepeticion']) < strtotime($fecha_hora) && $actualizar_idestado['id_estado'] == 2){
                 try{
                     $correos = explode(",", $result['correos']);
                     $correos = implode(", ", $correos);
                     if(mail($correos, $result['asunto'], $result['mensaje'])){
                         $query_repeticion = $conn->query("UPDATE notificacion SET id_estado = 3 WHERE id_notificacion = " . $result['idnotificacion'] . ";");
+                        echo "Entro al segundo IF";
                     }
-                    echo "Entro al segundo IF";
                 }catch(Exception $ex){
                     throw $ex->getMessage();
                 }
@@ -51,14 +51,14 @@
 
             $actualizar_idestado2 = $conn->query("SELECT id_estado FROM notificacion WHERE id_notificacion = " . $result['idnotificacion'] . ";")->fetch_assoc();
 
-            if($result['fPrincipal'] == $fecha_hora && $actualizar_idestado2['id_estado'] == 3 || $result['fPrincipal'] < $fecha_hora && $actualizar_idestado2['id_estado'] == 3){
+            if(strtotime($result['fPrincipal']) == strtotime($fecha_hora) && $actualizar_idestado2['id_estado'] == 3 || strtotime($result['fPrincipal']) < strtotime($fecha_hora) && $actualizar_idestado2['id_estado'] == 3){
                 try{
                     $correos = explode(",", $result['correos']);
                     $correos = implode(", ", $correos);
                     if(mail($correos, $result['asunto'], $mensaje)){
                         $query_principal = $conn->query("UPDATE notificacion SET id_estado = 4 WHERE id_notificacion = " . $result['idnotificacion'] . ";");
+                        echo "Entro al tercer IF";
                     }
-                    echo "Entro al tercer IF";
                 }catch(Exception $ex){
                     throw $ex->getMessage();
                 }
