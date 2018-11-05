@@ -14,6 +14,7 @@ and open the template in the editor.
         <link rel="stylesheet" href="../Css/calendar.css">
         <script type="text/javascript" src="../JS/language/es-MX.js"></script>
         <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
+        <link rel="shortcut icon" href="../Imagenes/logo-lems.jpeg" type="image/x-icon"/>
         <style> header, body{font-family: 'Lato';}</style>
     </head>
     <body>

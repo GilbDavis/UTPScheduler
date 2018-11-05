@@ -7,7 +7,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>LEMS - Menú Administrador</title>
+        <title>LEMS - Menú Personal</title>
         <link type="text/css" rel="stylesheet" href="../Css/Menu.css"/>
         <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
         <link rel="shortcut icon" href="../Imagenes/logo-lems.jpeg" type="image/x-icon"/>
@@ -17,20 +17,8 @@ and open the template in the editor.
 
         <?php require '../Header_Footer/Header.php'; ?>
 
-        <section class="recordatorio">
-            <a href='../Email_Section/EPrincipal.php'>Crear recordatorio</a>
-        </section>
-
-        <section class="recordatorio">
+        <section class="recordatorio" style="margin-left: 40%">
             <a href="../Calendario/Calendario.php">Agenda</a>
-        </section>
-
-        <section class="recordatorio">
-            <a href="#">Editar Recordatorio</a>
-        </section>
-
-        <section class="recordatorio">
-            <a href="../SeccionAdmin/AgregarPersonal.php">Agregar Personal</a>
         </section>
 
        <!-- <footer class="foot"><center>

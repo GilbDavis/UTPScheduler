@@ -22,12 +22,12 @@
               $fecha_anterior = new DateTime($fecha);
               $intervalo = new DateInterval('P1D');
               $fecha_anterior->sub($intervalo);
-              $fecha_anterior = $fecha_anterior->format('Y-m-d H:i:s');
+              $fecha_anterior = $fecha_anterior->format('Y-m-d H:i');
               //Cambia la hora de la fecha al predeterminado por el laboratorio que es
               //a las 8:00 AM
               $fecha_repeticion = new DateTime($fecha);
               $fecha_repeticion->setTime(8, 00, 00);
-              $fecha_repeticion = $fecha_repeticion->format('Y-m-d H:i:s');
+              $fecha_repeticion = $fecha_repeticion->format('Y-m-d H:i');
 
               $sql1 = 'INSERT INTO correos(correo) VALUES ("' . $correo . '");';
               $db1 = $conn->query($sql1);

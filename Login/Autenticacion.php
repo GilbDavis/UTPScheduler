@@ -56,7 +56,7 @@
                           $_SESSION['user_corr'] = $row['correo'];
                           $_SESSION['user_cargo'] = $row['cargo'];
                           $_SESSION['user_rol'] = $row['rol'];
-                          header();
+                          header('Location: SeccionMember/MemberMenu.php');
                       }
                   }
               }
