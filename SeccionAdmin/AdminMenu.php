@@ -26,7 +26,7 @@ and open the template in the editor.
         </section>
 
         <section class="recordatorio">
-            <a href="#">Editar Recordatorio</a>
+            <a href="../EditarAlarma/PaginaEdicion.php">Editar Recordatorio</a>
         </section>
 
         <section class="recordatorio">
