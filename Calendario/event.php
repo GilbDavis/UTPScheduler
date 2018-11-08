@@ -10,17 +10,31 @@
   $date = date('Y-m-d H:i:s');
 
   while ($rows = $result->fetch_assoc()) {
-      // convert date to milliseconds
-      $start = strtotime($rows['fecha_ant']) * 1000;
-      $end = strtotime($rows['fecha']) * 1000;
-      $calendar[] = array(
-        'id' =>$rows['idnotificacion'],
-        'title' => $rows['asunto'],
-        'url' => "#",
-        "class" => 'event-important',
-        'start' => "$start",
-        'end' => "$end"
-      );
+      if(empty($rows['fecha_ant'])){
+          // convert date to milliseconds
+          $start = strtotime($rows['fecha']) * 1000;
+          $end = strtotime($rows['fecha']) * 1000;
+          $calendar[] = array(
+            'id' =>$rows['idnotificacion'],
+            'title' => $rows['asunto'],
+            'url' => "#",
+            "class" => 'event-important',
+            'start' => "$start",
+            'end' => "$end"
+          );
+      }else{
+          // convert date to milliseconds
+          $start = strtotime($rows['fecha_ant']) * 1000;
+          $end = strtotime($rows['fecha']) * 1000;
+          $calendar[] = array(
+            'id' =>$rows['idnotificacion'],
+            'title' => $rows['asunto'],
+            'url' => "#",
+            "class" => 'event-important',
+            'start' => "$start",
+            'end' => "$end"
+          );
+      }
   }
   $calendarData = array(
   "success" => 1,
