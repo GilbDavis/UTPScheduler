@@ -7,8 +7,9 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>LEMS - Editar Alarma</title>
+        <title>AGENDA LEMS - Editar Alarma</title>
         <link type="text/css" rel="stylesheet" href="../Css/Menu.css"/>
+        <link type="text/css" rel="stylesheet" href="../Css/footer.css"/>
         <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
         <link rel="shortcut icon" href="../Imagenes/logo-lems.jpeg" type="image/x-icon"/>
         <style> header, body{font-family: 'Lato';}</style>
@@ -47,7 +48,6 @@ and open the template in the editor.
                     if($row = $conn->query($sql)){
                         $rowcnt = $row->num_rows;
                         if($rowcnt > 0){
-                            //Crea una tabla para mostrar los datos
                             echo "<table id='tablaEdicion' class='table table-striped table-bordered'>";
                                 echo "<thead>";
                                     echo "<tr>";
@@ -69,7 +69,6 @@ and open the template in the editor.
                                         echo "<td data-target='mensaje'>" . $result['mensaje'] . "</td>";
                                         echo "<td data-target='fecha'>" . $result['fPrincipal'] . "</td>";
                                         echo "<td>";
-                                        //Estos 2 botones son para editar y eliminar los datos de la Base de datos
                                             echo "<button data-role='update' data-id='" . $result['idnotificacion'] ."' class='btn btn-warning' data-target='#ModalUpdate' data-toggle='modal' style='margin:auto; display: block;'><span class='glyphicon glyphicon-pencil'></span></button>";
                                         echo '</td>';
                                         echo '<td>';
@@ -80,7 +79,7 @@ and open the template in the editor.
                                 echo "</tbody>";                            
                             echo "</table>";
                         } else{
-                            echo "<p class='lead'><em>No hay recordatorios</em></p>";
+                            echo "<p class='lead'><em>No fue econtrado</em></p>";
                         }
                     } else{
                         echo "ERROR: no se pudo ejecutar";
@@ -117,7 +116,7 @@ and open the template in the editor.
     <div id="ModalUpdate" class="modal fade" role="dialog">
       <div class="modal-dialog modal-lg">
 
-        <!-- Seccion de contenido del modal-->
+        <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -145,6 +144,9 @@ and open the template in the editor.
         </div>
       </div>
     </div>
+    <footer class="foot"><center>
+                <h4>GRUPO DE DESARROLLO DE SOFTWARE 2018: GILBERTO DAVIS, LEONARDO MONTERO,LINETH GUERRA Y CIRILO CASTRO.</h4>
+    <center></footer>
     </body>
     <script type="text/javascript">
         $(document).ready(function(){
@@ -194,7 +196,6 @@ and open the template in the editor.
                     method: 'POST',
                     data: {id:id},
                     success:function(data){
-                        //Al entrar aqui recargara la pagina automaticamente
                         location.reload();
                     }
                 });

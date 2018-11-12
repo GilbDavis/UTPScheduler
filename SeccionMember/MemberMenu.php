@@ -7,26 +7,28 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>LEMS - Menú Personal</title>
+        <title>AGENDA LEMS - Menú Personal</title>
         <link type="text/css" rel="stylesheet" href="../Css/Menu.css"/>
+        <link rel="stylesheet" type="text/css" href="../Css/footer.css"/>
         <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
-        <link rel="shortcut icon" href="../Imagenes/logo-lems.jpeg" type="image/x-icon"/>
+        <link rel="shortcut icon" href="../Imagenes/LOGO.png" type="image/x-icon"/>
         <style> header, body{font-family: 'Lato';}</style>
     </head>
     <body>
 
         <?php require '../Header_Footer/Header.php'; ?>
-
+        <br>
+        <br>
+        <br>
         <section class="recordatorio" style="margin-left: 40%">
             <a href="../Calendario/Calendario.php">Agenda</a>
         </section>
-
-       <!-- <footer class="foot"><center>
-            <a href="https://www.instagram.com/davis_0297/" target="_blank"><img src="../Imagenes/instagram-logo.png" alt="Instagram"/></a>
-            <a href="https://www.facebook.com" target="_blank"><img src="../Imagenes/facebook-logo-button.png" alt="Facebook"/></a>
-            <a href="https://api.whatsapp.com/send?phone=50763737013" target="_blank"><img src="../Imagenes/whatsapp.png" alt="Whatsapp"/></a>
-            <a href="https://www.linkedin.com/in/gilbertodavis/" target="_blank"><img src="../Imagenes/linkedin.png" alt="Linkedin"/></a>
-            <center></footer> -->
-
+        <BR>
+        <BR>
+        <BR>
+        <BR>
+        <footer class="foot"><center>
+                <h4>GRUPO DE DESARROLLO DE SOFTWARE 2018: GILBERTO DAVIS, LEONARDO MONTERO,LINETH GUERRA Y CIRILO CASTRO.</h4>
+        <center></footer>
     </body>
 </html>

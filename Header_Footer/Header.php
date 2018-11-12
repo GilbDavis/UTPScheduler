@@ -28,13 +28,13 @@ and open the template in the editor.
     <body>
         <header>
             <div class="wrapper">
-                <img src='../Imagenes/logo-lems.jpeg' alt='Logo LEMS'/>
+                <img src='../Imagenes/LOGO.png' alt='Logo LEMS'/>
                 <div class="logo">
-                    <a href="<?php if($_SESSION['user_rol'] == 'Admin'){ echo '../SeccionAdmin/AdminMenu.php'; }else if($_SESSION['user_rol'] == 'Member'){ echo '../SeccionMember/MemberMenu.php'; } ?>">Agenda LEMS ©2018</a>
+                    <a href="<?php if($_SESSION['user_rol'] == 'Admin'){ echo '../SeccionAdmin/AdminMenu.php'; }else if($_SESSION['user_rol'] == 'Member'){ echo '../SeccionMember/MemberMenu.php'; } ?>">Agenda LEMS 2018</a>
                 </div>
                 <nav>
                     <a data-toggle="modal" data-target="#myModal"><?php echo $_SESSION['user_nom'] . ' ' . $_SESSION['user_ape']; ?></a>
-                    <a href="../Login/CerrarSesion.php">Cerrar Sesion</a>
+                    <a href="../Login/CerrarSesion.php">Cerrar Sesión</a>
                 </nav>
             </div>
         </header>

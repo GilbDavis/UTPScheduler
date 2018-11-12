@@ -1,3 +1,15 @@
+body{
+    height: 100%;
+    margin: 0px;
+    background: white;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
 [class*="cal-cell"] {
   float: left;
   margin-left: 0;

@@ -5,14 +5,15 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>LEMS - Crear recordatorio</title>
+        <title>AGENDA LEMS - Crear recordatorio</title>
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="../JS/GetEmails.js"></script>
         <link rel="stylesheet" type="text/css" href="../Css/notificacion.css"/>
+        <link rel="stylesheet" type="text/css" href="../Css/footer.css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
-        <link rel="shortcut icon" href="../Imagenes/logo-lems.jpeg" type="image/x-icon"/>
+        <link rel="shortcut icon" href="../Imagenes/LOGO.png" type="image/x-icon"/>
         <style> header, body{font-family: 'Lato';}</style>
     </head>
     <body>
@@ -46,10 +47,16 @@
             <label class="container">
                 <input type="checkbox" checked="checked" name="Repetir">
                 <span class="checkmark"></span>
-            ¿Desea que este recordatorio se repita?</label>
+                ¿Desea que este recordatorio se repita?</label>
             <input id="formButton" type="submit" name="enviar" value="Guardar"/>
         </form>
         </div>
-
+        <br>
+        <br>
+        <br>
+        <br>
+        <footer class="foot"><center>
+                <h4>GRUPO DE DESARROLLO DE SOFTWARE 2018: GILBERTO DAVIS, LEONARDO MONTERO,LINETH GUERRA Y CIRILO CASTRO.</h4>
+        <center></footer>
     </body>
 </html>

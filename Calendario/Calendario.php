@@ -7,14 +7,15 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>LEMS - Calendario de Eventos</title>
+        <title>AGENDA LEMS - Calendario de Eventos</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="../Css/calendar.css">
+        <link rel="stylesheet" href="../Css/footer.css">
         <script type="text/javascript" src="../JS/language/es-MX.js"></script>
         <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
-        <link rel="shortcut icon" href="../Imagenes/logo-lems.jpeg" type="image/x-icon"/>
+        <link rel="shortcut icon" href="../Imagenes/LOGO.png" type="image/x-icon"/>
         <style> header, body{font-family: 'Lato';}</style>
     </head>
     <body>
@@ -36,7 +37,7 @@ and open the template in the editor.
               </div>
             </div>
             <h3></h3>
-            <small>Bienvenido al Calendario de eventos de LEMS</small>
+            <small>Bienvenido al Calendario de eventos de la AGENDA LEMS</small>
           </div>
           <div class="row">
             <div class="col-md-9">
@@ -52,5 +53,11 @@ and open the template in the editor.
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
         <script type="text/javascript" src="../JS/calendar.js"></script>
         <script type="text/javascript" src="../JS/events.js"></script>
+        <br>
+        <br>
+        <br>
+        <footer class="foot"><center>
+                <h4>GRUPO DE DESARROLLO DE SOFTWARE 2018: GILBERTO DAVIS, LEONARDO MONTERO,LINETH GUERRA Y CIRILO CASTRO.</h4>
+        <center></footer>
     </body>
 </html>
