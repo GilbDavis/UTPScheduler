@@ -69,7 +69,7 @@ and open the template in the editor.
                                         echo "<td data-target='mensaje'>" . $result['mensaje'] . "</td>";
                                         echo "<td data-target='fecha'>" . $result['fPrincipal'] . "</td>";
                                         echo "<td>";
-                                            echo "<button data-role='update' data-id='" . $result['idnotificacion'] ."' class='btn btn-warning' data-target='#ModalUpdate' data-toggle='modal' style='margin:auto; display: block;'><span class='glyphicon glyphicon-pencil'></span></button>";
+                                            echo "<button data-role='update' data-id='" . $result['idnotificacion'] ."' class='btn btn-warning' data-target='#ModalUpdate' style='margin:auto; display: block;'><span class='glyphicon glyphicon-pencil'></span></button>";
                                         echo '</td>';
                                         echo '<td>';
                                             echo "<button class='btn btn-danger' data-toggle='modal' data-target='#ModalDelete' data-role='delete' data-id='". $result['idnotificacion'] ."' style='margin:auto; display: block;'><span class='glyphicon glyphicon-trash'></span></button>";
