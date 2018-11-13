@@ -15,6 +15,9 @@
       $asunto  = filter_input(INPUT_POST, 'asunto');
       $mensaje = filter_input(INPUT_POST, 'mensaje');
       $repetir = filter_input(INPUT_POST, 'Repetir');
+      //Elimina la ultima coma y espacio de los correos seleccionados
+      $correosubs = substr($correo, 0, -2);
+      echo '<script> alert("'.$correosubs.'"); </script>';
 
       if ($repetir) {
           try {
@@ -28,10 +31,8 @@
               $fecha_repeticion = new DateTime($fecha);
               $fecha_repeticion->setTime(8, 00, 00);
               $fecha_repeticion = $fecha_repeticion->format('Y-m-d H:i');
-              //Elimina la ultima coma y espacio de los correos seleccionados
-              $correo = substr($correo, 0, -2);
 
-              $sql1 = 'INSERT INTO correos(correo) VALUES ("' . $correo . '");';
+              $sql1 = 'INSERT INTO correos(correo) VALUES ("' . $correosubs . '");';
               $db1 = $conn->query($sql1);
               $idcorreos = $conn->insert_id;
 
