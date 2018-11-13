@@ -1,4 +1,6 @@
-<?php include 'GuardarRecordatorio.php'; ?>
+<?php 
+    include 'GuardarRecordatorio.php'; 
+?>
 
 <!DOCTYPE html>
 
@@ -23,7 +25,7 @@
         <div id="Formulario">
             <form method="post" action="EPrincipal.php" autocomplete="off">
             <label for="Para">Para: </label><br>
-            <input id="correos" type="text" name="correos" placeholder="example@server.com" required/><br>
+            <input id="correos" type="text" name="correos" placeholder="example@server.com" disabled="true" required/><br>
             <?php include '../Email_Section/Selector.php'; ?>
 
             <div class="form-group">

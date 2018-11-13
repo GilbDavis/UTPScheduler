@@ -84,7 +84,6 @@ and open the template in the editor.
                     } else{
                         echo "ERROR: no se pudo ejecutar";
                     }
- 
                     $conn->close();
                     ?>
                 </div>

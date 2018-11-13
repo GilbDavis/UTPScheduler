@@ -28,6 +28,8 @@
               $fecha_repeticion = new DateTime($fecha);
               $fecha_repeticion->setTime(8, 00, 00);
               $fecha_repeticion = $fecha_repeticion->format('Y-m-d H:i');
+              //Elimina la ultima coma y espacio de los correos seleccionados
+              $correo = substr($correo, 0, -2);
 
               $sql1 = 'INSERT INTO correos(correo) VALUES ("' . $correo . '");';
               $db1 = $conn->query($sql1);
