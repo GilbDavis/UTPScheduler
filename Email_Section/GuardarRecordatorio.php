@@ -17,7 +17,6 @@
       $repetir = filter_input(INPUT_POST, 'Repetir');
       //Elimina la ultima coma y espacio de los correos seleccionados
       $correosubs = substr($correo, 0, -2);
-      echo '<script> alert("'.$correosubs.'"); </script>';
 
       if ($repetir) {
           try {
