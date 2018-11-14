@@ -5,11 +5,12 @@
         <title>AGENDA LEMS - Agregar Personal</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
         <link rel="stylesheet" type="text/css" href="../Css/Personal.css"/>
         <link rel="stylesheet" type="text/css" href="../Css/footer.css"/>
         <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
         <style> header, body{font-family: 'Lato';}</style>
-        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="../JS/ContraseñaVerificar.js"></script>
         <link rel="shortcut icon" href="../Imagenes/LOGO.png" type="image/x-icon"/>
     </head>
@@ -34,22 +35,25 @@
                     text-align: center; 
                     background: C;}</style>
             <label>Nombre: </label><br>
-            <input class="inputs" type="text" name="nombre" placeholder="Nombre..."/ title="Se requiere este campo" required><br>
+            <input class="inputs" type="text" name="nombre" placeholder="Nombre..."/ title="Se requiere este campo"><br>
             <label>Apellido: </label><br>
-            <input class="inputs" type="text" name="apellido" placeholder="Apellido..." required/><br>
+            <input class="inputs" type="text" name="apellido" placeholder="Apellido..."/><br>
             <label>Cedula: </label><br>
             <input class="inputs" type="text" name="cedula" placeholder="0-000-0000" required/><br>
-            <label>Correo: </label><br>
-            <input class="inputs" type="email" name="correo" placeholder="ejemplo@example.com" required/><br>
+            <label>Correo electrónico: </label><br>
+            <input class="inputs" type="email" name="correo" placeholder="ejemplo@example.com"/><br>
             <label>Cargo: </label><br>
-            <input class="inputs" type="text" name="cargo" placeholder="Cargo..." required/><br>
+            <input class="inputs" type="text" name="cargo" placeholder="Cargo..."/><br>
             <label>Contraseña: </label><br>
-            <input id="contra" class="inputs" type="password" name="contrasena" placeholder="***********" required/><br>
+            <input id="contra" class="inputs" type="password" name="contrasena" placeholder="***********"/><br>
             <label>Confirmar contraseña: </label><br>
             <input id="recontra" class="inputs" type="password" name="contrasenaverify"
-             placeholder="***********" onchange="checkPasswordMatch()" required/><br>
+             placeholder="***********" onchange="checkPasswordMatch()"/><br>
             <div class="contramatch" id="checkpassword"></div>
-            <input id="btnRegistrar" type="submit" name="submit" value="Registrar Personal"/>
+            <input id="btnRegistrar" class="btn btn-primary" type="submit" name="submit" value="Registrar Personal"/>
+            <!--<input id="btnActualizar" class="btn btn-warning" type="submit" name="Actualizar" value="Actualizar Información"/> -->
+            <!-- Si se usara el boton actualizar datos agregar esto al boton eliminar style="margin:10px 0px 0px 70px;" -->
+            <input id="btnEliminar" class="btn btn-danger" type="submit" name="Eliminar" onclick="return confirm('Esta seguro que desea eliminar este usuario?');" value="Eliminar Personal"/>
           </form>
         </div>
         <br>
