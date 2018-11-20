@@ -46,12 +46,13 @@
               $sql = "INSERT INTO usuarios(nombre, apellido, cedula, correo, clave,
            rol, cargo) VALUES ('$nombre', '$apellido', '$cedula', '$correo', '$recontrasena',
            '$rol', '$cargo');";
-              $resultado = $conn->query($sql);
-              //Al momento en que se inserten los datos mostrara un alerta con un mensaje!
-              echo '<script language="javascript">';
-              echo 'alert("Registrado con exito!");';
-              echo 'window.location.href="../SeccionAdmin/AgregarPersonal.php"';
-              echo '</script>';
+              if($resultado = $conn->query($sql)){
+                //Al momento en que se inserten los datos mostrara un alerta con un mensaje!
+                echo '<script language="javascript">';
+                echo 'alert("Registrado con exito!");';
+                echo 'window.location.href="../SeccionAdmin/AgregarPersonal.php"';
+                echo '</script>';
+              }
           } catch (Exception $ex) {
               echo '<script language="javascript">';
               echo 'alert(' . $ex->getMessage() . ')';
