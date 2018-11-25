@@ -10,7 +10,6 @@
         <link rel="stylesheet" type="text/css" href="../Css/footer.css"/>
         <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
         <style> header, body{font-family: 'Lato';}</style>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="../JS/ContraseñaVerificar.js"></script>
         <link rel="shortcut icon" href="../Imagenes/LOGO.png" type="image/x-icon"/>
     </head>
