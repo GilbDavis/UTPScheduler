@@ -25,13 +25,15 @@ and open the template in the editor.
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
         <style> header, body{font-family: 'Lato';}</style>
+        <style type="text/css">#titulo{transform: translate(-50%, -50%);transition: all 500ms ease;} 
+            #titulo:hover{font-size: 51px;background: black;border-radius: 10px;}</style>
     </head>
     <body>
         <header>
             <div class="wrapper">
                 <img src='../Imagenes/LOGO.png' alt='Logo LEMS'/>
                 <div class="logo">
-                    <a href="<?php if($_SESSION['user_rol'] == 'Admin'){ echo '../SeccionAdmin/AdminMenu.php'; }else if($_SESSION['user_rol'] == 'Member'){ echo '../SeccionMember/MemberMenu.php'; } ?>">Agenda LEMS 2018</a>
+                    <a id="titulo" href="<?php if($_SESSION['user_rol'] == 'Admin'){ echo '../SeccionAdmin/AdminMenu.php'; }else if($_SESSION['user_rol'] == 'Member'){ echo '../SeccionMember/MemberMenu.php'; } ?>">Agenda LEMS 2018</a>
                 </div>
                 <nav>
                     <a data-toggle="modal" data-target="#myModal"><?php echo $_SESSION['user_nom'] . ' ' . $_SESSION['user_ape']; ?></a>

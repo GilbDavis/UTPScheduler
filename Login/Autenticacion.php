@@ -63,7 +63,7 @@
               $conn->close();
               $row->close();
           } else {
-              array_push($errors, "El e-mail/contraseña son invalidos");
+              array_push($errors, "La cedula/contraseña son invalidos");
           }
       }
   }
