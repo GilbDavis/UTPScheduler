@@ -16,7 +16,7 @@
           $end = strtotime($rows['fecha']) * 1000;
           $calendar[] = array(
             'id' =>$rows['idnotificacion'],
-            'title' => $rows['asunto'],
+            'title' => utf8_encode($rows['asunto']),
             'url' => "#",
             "class" => 'event-important',
             'start' => "$start",
@@ -28,7 +28,7 @@
           $end = strtotime($rows['fecha']) * 1000;
           $calendar[] = array(
             'id' =>$rows['idnotificacion'],
-            'title' => $rows['asunto'],
+            'title' => utf8_encode($rows['asunto']),
             'url' => "#",
             "class" => 'event-important',
             'start' => "$start",

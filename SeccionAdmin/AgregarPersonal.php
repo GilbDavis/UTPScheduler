@@ -60,7 +60,7 @@
         <br>
         <br>
         <br>
-        <footer class="foot"><center>
+        <footer class="foot" style="margin-top: 40px;clear: both;position: relative;height: 40px;"><center>
                 <h4>GRUPO DE DESARROLLO DE SOFTWARE 2018: GILBERTO DAVIS, LEONARDO MONTERO,LINETH GUERRA Y CIRILO CASTRO.</h4>
         <center></footer>
     </body>
