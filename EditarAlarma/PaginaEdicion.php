@@ -64,7 +64,7 @@ and open the template in the editor.
                                 while($result = $row->fetch_assoc()){
                                     echo "<tr id='" . $result['idnotificacion'] ."'>";
                                         echo "<td data-target='idnot'>" . $result['idnotificacion'] . "</td>";
-                                        echo "<td>" . $result['asunto'] . "</td>";
+                                        echo "<td>" . utf8_encode($result['asunto']) . "</td>";
                                         echo "<td data-target='correos'>" . $result['correos'] . "</td>";
                                         echo "<td data-target='mensaje'>" . $result['mensaje'] . "</td>";
                                         echo "<td data-target='fecha'>" . $result['fPrincipal'] . "</td>";
