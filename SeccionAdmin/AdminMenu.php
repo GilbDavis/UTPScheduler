@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <meta charset="UTF-8">
@@ -15,7 +10,7 @@ and open the template in the editor.
         <style> header, body{font-family: 'Lato';}</style>
     </head>
     <body>
-
+        <!-- Se incluye el header -->
         <?php require '../Header_Footer/Header.php'; ?>
         <br>
         <br>

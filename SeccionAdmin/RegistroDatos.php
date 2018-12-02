@@ -1,4 +1,5 @@
 <?php
+  //Importa la conexion a la base de datos
   require '../Conexion/Connection.php';
 
   //Definir las variables
@@ -62,7 +63,7 @@
           array_push($errores, "No ha ingresado ningun dato!");
       }
   }
-  /*//Actualizar informacion, Se necesita llenar 
+  /*//Actualizar informacion, Se necesita llenar
   if(isset($_POST['Actualiar'])){
     //Obtener los valores del formulario
       $nombre = filter_input(INPUT_POST, 'nombre');
@@ -127,7 +128,7 @@
               echo '</script>';
               console.log($ex->getMessage());
           }
-      } 
+      }
   }
   $conn->close();
 ?>

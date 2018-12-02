@@ -1,7 +1,8 @@
 <?php
-
+  //Se incluye la conexion a la base de datos
   require 'Conexion/Connection.php';
   //Se definen las varias a utilizar
+  //el arreglo errors tendra los errores que va a manejar la autenticacion
   $errors = array();
   $cedula = "";
   $contrasena = "";
@@ -28,7 +29,9 @@
           //contraseña ingresada y si son correctas buscar en la tabla el usuario e ingresar
           //P.D: Este codigo esta mal optimizado, a futuro debo cambiar esto ya que esta utilizando
           //recursos innnecesariamente
+          //En esta condicion se verifica si las contraseñas coinciden
           if (password_verify($contrasena, $contraup)) {
+            //Si estas concuerdan se consultan los datos del usuario para inicializar las variables de sesion
               $sql = "SELECT id_usuario, nombre, apellido, cedula, clave, rol, cargo, correo FROM Usuarios WHERE"
                     . " cedula = '$cedula' AND clave = '$contraup'";
               $resultado = $conn->query($sql);
@@ -36,6 +39,7 @@
 
               if ($resultado->num_rows > 0) {
                   //Si la consulta retorna 1 valor iniciara la sesion e iniciará las variables de sesion
+                  //Se inicializan las variables de sesion y se redirecciona al menu del administrador
                   if ($row['rol'] == 'Admin') {
                       session_start();
                       $_SESSION['user_id'] = $row['id_usuario'];
@@ -47,6 +51,7 @@
                       $_SESSION['user_rol'] = $row['rol'];
                       header('Location: SeccionAdmin/AdminMenu.php');
                   } else {
+                      //El mismo procedimiento pero se redireccion al menu del Personal
                       if ($row['rol'] == 'Member') {
                           session_start();
                           $_SESSION['user_id'] = $row['id_usuario'];
@@ -63,6 +68,7 @@
               $conn->close();
               $row->close();
           } else {
+              //Si las contraseñas no coinciden o la cedula no coincide se enviara este error
               array_push($errors, "La cedula/contraseña son invalidos");
           }
       }
