@@ -7,8 +7,9 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>LEMS - Editar Alarma</title>
+        <title>AGENDA LEMS - Editar Alarma</title>
         <link type="text/css" rel="stylesheet" href="../Css/Menu.css"/>
+        <link type="text/css" rel="stylesheet" href="../Css/footer.css"/>
         <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
         <link rel="shortcut icon" href="../Imagenes/logo-lems.jpeg" type="image/x-icon"/>
         <style> header, body{font-family: 'Lato';}</style>
@@ -143,6 +144,9 @@ and open the template in the editor.
         </div>
       </div>
     </div>
+    <footer class="foot"><center>
+                <h4>GRUPO DE DESARROLLO DE SOFTWARE 2018: GILBERTO DAVIS, LEONARDO MONTERO,LINETH GUERRA Y CIRILO CASTRO.</h4>
+    <center></footer>
     </body>
     <script type="text/javascript">
         $(document).ready(function(){

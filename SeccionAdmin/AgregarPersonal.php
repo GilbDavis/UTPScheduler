@@ -2,30 +2,37 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>LEMS - Agregar Personal</title>
+        <title>AGENDA LEMS - Agregar Personal</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../Css/Personal.css"/>
+        <link rel="stylesheet" type="text/css" href="../Css/footer.css"/>
         <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
         <style> header, body{font-family: 'Lato';}</style>
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script src="../JS/ContraseñaVerificar.js"></script>
-        <link rel="shortcut icon" href="../Imagenes/logo-lems.jpeg" type="image/x-icon"/>
+        <link rel="shortcut icon" href="../Imagenes/LOGO.png" type="image/x-icon"/>
     </head>
     <body>
 
         <?php require '../Header_Footer/Header.php'; ?>
 
-        <h1>Formulario de Registro</h1>
         <div class="Register-Container">
           <form method="post" id="registro" action="AgregarPersonal.php" autocomplete="off">
-            <h2>Registrar personal</h2>
+            <h2>Registrar Personal</h2>
             <!--Incluyo el archivo erroresRegistro para que se muestre en caso de que ocurra alguno
             Agrego el estilo aqui para que sea exclusivo para este formulario-->
             <?php include('erroresRegistro.php'); ?>
-            <style>.error{font-size:16px; color: #a94442; margin-bottom: 5px;
-              border-radius: 5px; border: 1px solid #a94442; margin-left: 20px;
-              margin-right: 100px; text-align: left; background: #f2dede;}</style>
+            <style>.error{
+                    font-size:16px; 
+                    color: #35c409; 
+                    margin-bottom: 5px;
+                    border-radius: 5px; 
+                    border: 1px solid #a94442; 
+                    margin-left: 20px;
+                    margin-right: 100px; 
+                    text-align: center; 
+                    background: C;}</style>
             <label>Nombre: </label><br>
             <input class="inputs" type="text" name="nombre" placeholder="Nombre..."/ title="Se requiere este campo" required><br>
             <label>Apellido: </label><br>
@@ -45,5 +52,13 @@
             <input id="btnRegistrar" type="submit" name="submit" value="Registrar Personal"/>
           </form>
         </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <footer class="foot"><center>
+                <h4>GRUPO DE DESARROLLO DE SOFTWARE 2018: GILBERTO DAVIS, LEONARDO MONTERO,LINETH GUERRA Y CIRILO CASTRO.</h4>
+        <center></footer>
     </body>
 </html>

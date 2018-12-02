@@ -4,15 +4,18 @@
 }
 
 body {
-  background-image: url(../Imagenes/register.png);
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+    background-image: url(../Imagenes/register.jpg);
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 h1 {
   text-align: center;
   padding: 20px;
-  color: white;
+  color: black;
   margin-left: 70px;
   font-weight: bold;
 }
@@ -27,16 +30,17 @@ h2 {
 }
 
 .Register-Container {
-  width: 500px;
+  width: 510px;
   margin: 0px auto;
-  color: white;
+  color: black;
+  font-style: bold;
   font-size: 18px;
   padding: 20px;
   border-radius: 10px;
 }
 
 .Register-Container {
-  background: #11a1d8;
+  background: #74ed88;
 }
 
 #registro {
@@ -44,9 +48,9 @@ h2 {
 }
 
 label {
-  color: white;
+  color: black;
   font-size: 18px;
-  font-style: italic;
+  font-style: BOLD;
 }
 
 .inputs {
@@ -63,24 +67,24 @@ label {
 #btnRegistrar {
   width: 200px;
   padding: 7px;
-  font-size: 16px;
-  font-style: italic;
+  font-size: 20px;
+  font-style: bold;
   font-weight: 600;
   border: none;
   border-radius: 20px;
   outline: 0;
   margin: 20px 0px 0px 50px;
   text-align: center;
-  background: #fb2525;
-  color: #fff;
+  background: #25a512;
+  color: black;
 }
 
 #btnRegistrar:hover {
   font-size: 18px;
   text-align: center;
   cursor: pointer;
-  background: #ffc107;
-  color: #000;
+  background: #1748d1;
+  color: white;
 }
 
 .contramatch {
@@ -89,3 +93,5 @@ label {
   margin-bottom: 10px;
   font-size: 16px;
 }
+
+
