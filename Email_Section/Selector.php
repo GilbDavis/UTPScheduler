@@ -1,5 +1,5 @@
 <?php
-
+  //Se incluye la conexion a la base de datos
     include '../Conexion/Connection.php';
     //Se consultan los correos guardados en la tabla
     $result = $conn->query("SELECT id_usuario, correo FROM Usuarios");

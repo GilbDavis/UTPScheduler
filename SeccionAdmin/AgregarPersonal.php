@@ -14,9 +14,9 @@
         <link rel="shortcut icon" href="../Imagenes/LOGO.png" type="image/x-icon"/>
     </head>
     <body>
-
+        <!-- Se incluye el header -->
         <?php require '../Header_Footer/Header.php'; ?>
-
+        <!-- Esta seccion contiene el formulario de registro para crear usuarios -->
         <div class="Register-Container">
           <form method="post" id="registro" action="AgregarPersonal.php" autocomplete="off">
             <h2>Registrar Personal</h2>
@@ -24,14 +24,14 @@
             Agrego el estilo aqui para que sea exclusivo para este formulario-->
             <?php include('erroresRegistro.php'); ?>
             <style>.error{
-                    font-size:16px; 
-                    color: #35c409; 
+                    font-size:16px;
+                    color: #35c409;
                     margin-bottom: 5px;
-                    border-radius: 5px; 
-                    border: 1px solid #a94442; 
+                    border-radius: 5px;
+                    border: 1px solid #a94442;
                     margin-left: 20px;
-                    margin-right: 100px; 
-                    text-align: center; 
+                    margin-right: 100px;
+                    text-align: center;
                     background: C;}</style>
             <label>Nombre: </label><br>
             <input class="inputs" type="text" name="nombre" placeholder="Nombre..."/ title="Se requiere este campo"><br>
