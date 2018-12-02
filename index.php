@@ -1,4 +1,6 @@
-<?php include('Login/Autenticacion.php'); ?>
+<?php include('Login/Autenticacion.php');
+
+ ?>
 <!DOCTYPE html>
 <html>
     <head>

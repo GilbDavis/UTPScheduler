@@ -19,8 +19,9 @@ and open the template in the editor.
         <style> header, body{font-family: 'Lato';}</style>
     </head>
     <body>
+      <!--Se incluye el archivo del header-->
         <?php require '../Header_Footer/Header.php'; ?>
-
+        <!--Todo esto contiene la seccion del calendario-->
         <div class="container">
           <div class="page-header">
             <div class="pull-right form-inline">
@@ -37,6 +38,7 @@ and open the template in the editor.
               </div>
             </div>
             <h3></h3>
+            <!--Titulo de bienvenida del calendario-->
             <small>Bienvenido al Calendario de eventos de la AGENDA LEMS</small>
           </div>
           <div class="row">
@@ -49,14 +51,14 @@ and open the template in the editor.
             </div>
           </div>
         </div>
-
+        <!--Aqui se llaman los archivos necesarios para ejecutar el Bootstrap Calendar y los archivos con su respectivo codigo-->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
         <script type="text/javascript" src="../JS/calendar.js"></script>
         <script type="text/javascript" src="../JS/events.js"></script>
         <br>
         <br>
         <br>
-        <footer class="foot"><center>
+        <footer class="foot" style="margin-top: 40px;clear: both;position: relative;height: 40px;"><center>
                 <h4>GRUPO DE DESARROLLO DE SOFTWARE 2018: GILBERTO DAVIS, LEONARDO MONTERO,LINETH GUERRA Y CIRILO CASTRO.</h4>
         <center></footer>
     </body>

@@ -1,36 +1,36 @@
 <?php
-if (session_status() == PHP_SESSION_NONE) {
+//Si la sesion no ha sido iniciada este script la inicia automaticamente
+if (!isset($_SESSION)) {
     session_start();
 }
-
+//Si el usuario intenta acceder a las funciones del sistema sin estar logueado
+//Este lo redirecciona al inicio de sesion
 if (empty($_SESSION["user_id"])) {
     header("Location: ../index.php");
     die("Redireccionando al Login");
 }
+
 ?>
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<!DOCTYPE HTML>
 <html>
     <head>
         <meta charset="UTF-8">
         <title></title>
         <link type="text/css" rel="stylesheet" href="../Css/Header.css"/>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
         <style> header, body{font-family: 'Lato';}</style>
+        <style type="text/css">#titulo{transform: translate(-50%, -50%);transition: all 500ms ease;}
+            #titulo:hover{font-size: 51px;background: black;border-radius: 10px;}</style>
     </head>
     <body>
         <header>
             <div class="wrapper">
                 <img src='../Imagenes/LOGO.png' alt='Logo LEMS'/>
                 <div class="logo">
-                    <a href="<?php if($_SESSION['user_rol'] == 'Admin'){ echo '../SeccionAdmin/AdminMenu.php'; }else if($_SESSION['user_rol'] == 'Member'){ echo '../SeccionMember/MemberMenu.php'; } ?>">Agenda LEMS 2018</a>
+                    <a id="titulo" href="<?php if($_SESSION['user_rol'] == 'Admin'){ echo '../SeccionAdmin/AdminMenu.php'; }else if($_SESSION['user_rol'] == 'Member'){ echo '../SeccionMember/MemberMenu.php'; } ?>">Agenda LEMS 2018</a>
                 </div>
                 <nav>
                     <a data-toggle="modal" data-target="#myModal"><?php echo $_SESSION['user_nom'] . ' ' . $_SESSION['user_ape']; ?></a>

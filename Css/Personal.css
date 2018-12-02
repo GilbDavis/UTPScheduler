@@ -64,10 +64,33 @@ label {
   color: #000;
 }
 
-#btnRegistrar {
+/*#btnRegistrar {
   width: 200px;
   padding: 7px;
+  font-size: 18px;
+  font-style: bold;
+  font-weight: 600;
+  border: none;
+  border-radius: 20px;
+  outline: 0;
+  margin: 20px 0px 0px 0px;
+  text-align: center;
+  background: #25a512;
+  color: black;
+}
+
+#btnRegistrar:hover {
   font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  background: #1748d1;
+  color: white;
+}
+
+#btnActualizar {
+  width: 200px;
+  padding: 7px;
+  font-size: 18px;
   font-style: bold;
   font-weight: 600;
   border: none;
@@ -79,13 +102,36 @@ label {
   color: black;
 }
 
-#btnRegistrar:hover {
-  font-size: 18px;
+#btnActualizar:hover {
+  font-size: 20px;
   text-align: center;
   cursor: pointer;
   background: #1748d1;
   color: white;
 }
+
+#btnEliminar {
+  width: 200px;
+  padding: 7px;
+  font-size: 18px;
+  font-style: bold;
+  font-weight: 600;
+  border: none;
+  border-radius: 20px;
+  outline: 0;
+  margin: 20px 0px 0px 50px;
+  text-align: center;
+  background: #25a512;
+  color: black;
+}
+
+#btnEliminar:hover {
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  background: #1748d1;
+  color: white;
+}*/
 
 .contramatch {
   color: red;

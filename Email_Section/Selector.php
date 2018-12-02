@@ -1,10 +1,10 @@
 <?php
-
+  //Se incluye la conexion a la base de datos
     include '../Conexion/Connection.php';
     //Se consultan los correos guardados en la tabla
     $result = $conn->query("SELECT id_usuario, correo FROM Usuarios");
     //Se crea un selection con opciones para que el usuario pueda elejir
-    echo '<label for="Selectemail">Correos electronicos: </label>';
+    echo '<label for="Selectemail">Correos electrónicos: </label>';
     echo '<select id="correosmysql">\n';
     echo '<option value ="0">Correos...</option>';
     while($row = $result->fetch_assoc()){
