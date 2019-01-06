@@ -24,20 +24,21 @@
         //Codigo para verificar si las fechas concuerdan con el actual para enviar los correos electronicos
         if($result){
             //Verifica si la hora actual es igual que la hora de la consulta y que aun no ha sido enviado
-            if(strtotime($result['fAnterior']) == strtotime($fecha_hora) && $result['idestado'] == 1 || strtotime($result['fAnterior']) < strtotime($fecha_hora) && $result['idestado'] == 1){
-                try{
-                    //Se le da formato a los correos elejidos a enviar para eliminar la ultima coma(,) que se guarda en
-                    //la creacion del recordatorio
-                    $correos = explode(",", $result['correos']);
-                    $correos = implode(", ", $correos);
-                    //Si el recordatorio se envia satisfactoriamente se actualiza el estado del recordatorio
-                    if(mail($correos, $result['asunto'], $result['mensaje'])){
-                        $query_anterior = $conn->query("UPDATE notificacion SET id_estado = 2 WHERE id_notificacion = " . $result['idnotificacion'] . ";");
+            if(!empty($result['fAnterior'])){
+                if(strtotime($result['fAnterior']) == strtotime($fecha_hora) && $result['idestado'] == 1 || strtotime($result['fAnterior']) < strtotime($fecha_hora) && $result['idestado'] == 1){
+                    try{
+                        //Se le da formato a los correos elejidos a enviar para eliminar la ultima coma(,) que se guarda en
+                        //la creacion del recordatorio
+                        $correos = explode(",", $result['correos']);
+                        $correos = implode(", ", $correos);
+                        //Si el recordatorio se envia satisfactoriamente se actualiza el estado del recordatorio
+                        if(mail($correos, $result['asunto'], $result['mensaje'])){
+                            $query_anterior = $conn->query("UPDATE notificacion SET id_estado = 2 WHERE id_notificacion = " . $result['idnotificacion'] . ";");
+                        }
+                    }catch (Exception $ex){
+                        throw $ex->getMessage();
                     }
-                }catch (Exception $ex){
-                    throw $ex->getMessage();
                 }
-            }
             //Se obtiene el id_estado actualizado si se acaba de enviar un recordatorio
             $actualizar_idestado = $conn->query("SELECT id_estado FROM notificacion WHERE id_notificacion = " . $result['idnotificacion'] . ";")->fetch_assoc();
             //Se realiza el mismo proceso que el primero pero este se cumple si el id_estado es igual a 2 osea que ya
@@ -67,6 +68,19 @@
                     throw $ex->getMessage();
                 }
             }
+          }else{
+            if(strtotime($result['fPrincipal']) == strtotime($fecha_hora) && $result['idestado'] == 1 || strtotime($result['fPrincipal']) < strtotime($fecha_hora) && $result['idestado'] == 1){
+                try{
+                    $correos = explode(",", $result['correos']);
+                    $correos = implode(", ", $correos);
+                    if(mail($correos, $result['asunto'], $result['mensaje'])){
+                        $query_principal = $conn->query("UPDATE notificacion SET id_estado = 4 WHERE id_notificacion = " . $result['idnotificacion'] . ";");
+                    }
+                }catch(Exception $ex){
+                    throw $ex->getMessage();
+                }
+            }
+          }
         }else{
             //Si no encuentra registros simplemente imprimira esto
             echo 'No hay Registros';
