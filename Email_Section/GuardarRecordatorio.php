@@ -14,7 +14,7 @@
   if (isset($_POST['enviar'])) {
       $correo = filter_input(INPUT_POST, 'correos');
       $fecha = filter_input(INPUT_POST, 'fecha');
-      $asunto  = filter_input(INPUT_POST, 'asunto');
+      $asunto  = filter_input(INPUT_POST, 'asunto_personalizado');
       $mensaje = filter_input(INPUT_POST, 'mensaje');
       $repetir = filter_input(INPUT_POST, 'Repetir');
       //Elimina la ultima coma y espacio de los correos seleccionados
@@ -41,15 +41,19 @@
                     . 'VALUES ("' . $fecha . '", "' . $fecha_repeticion . '", "' .
                     $fecha_anterior . '");';
               $db2 = $conn->query($sql2);
-              $idfechas = $conn->insert_id;//Obtiene el ultimo id insertado
-              //Inserta el mensaje junto con el id de fecha y correos creados
-              $sql3 = 'INSERT INTO notificacion(id_usuario, id_asunto, id_fechas,'
-                    . ' id_estado, id_correos, mensaje) VALUES (' . $_SESSION['user_id'] .
-                    ', ' . $asunto . ', ' . $idfechas . ', 1, ' . $idcorreos . ', "' . $mensaje . '");';
+              $idfechas = $conn->insert_id; //Obtiene el ultimo id insertado
+              //Inserta el nuevo asunto a la BD
+              $sql3 = 'INSERT INTO asunto(asunto) VALUES ("' . $asunto . '");';
               $db3 = $conn->query($sql3);
+              $id_asunto = $conn->insert_id;
+              //Inserta el mensaje junto con el id de fecha y correos creados
+              $sql4 = 'INSERT INTO notificacion(id_usuario, id_asunto, id_fechas,'
+                    . ' id_estado, id_correos, mensaje) VALUES (' . $_SESSION['user_id'] .
+                    ', ' . $id_asunto . ', ' . $idfechas . ', 1, ' . $idcorreos . ', "' . $mensaje . '");';
+              $db4 = $conn->query($sql4);
               //Si llega a la consulta 3 y este se ejecuta exitosamente se envia una alerta al navegador
               //Indicando que el recordatorio se guardo exitosamente!
-              if ($db3) {
+              if ($db4) {
                   echo '<script language="javascript">';
                   echo 'alert("Guardado con exito!");';
                   echo '</script>';
@@ -70,12 +74,17 @@
               $db2 = $conn->query($sql2);
               $idfechas = $conn->insert_id;
 
-              $sql3 = 'INSERT INTO notificacion(id_usuario, id_asunto, id_fechas,'
-                    . ' id_estado, id_correos, mensaje) VALUES (' . $_SESSION['user_id'] .
-                    ', ' . $asunto . ', ' . $idfechas . ', 1, ' . $idcorreos . ', "' . $mensaje . '");';
+              //Inserta el nuevo asunto a la BD
+              $sql3 = 'INSERT INTO asunto(asunto) VALUES ("' . $asunto . '");';
               $db3 = $conn->query($sql3);
+              $id_asunto = $conn->insert_id;
 
-              if ($db3) {
+              $sql4 = 'INSERT INTO notificacion(id_usuario, id_asunto, id_fechas,'
+                    . ' id_estado, id_correos, mensaje) VALUES (' . $_SESSION['user_id'] .
+                    ', ' . $id_asunto . ', ' . $idfechas . ', 1, ' . $idcorreos . ', "' . $mensaje . '");';
+              $db4 = $conn->query($sql4);
+
+              if ($db4) {
                   echo '<script language="javascript">';
                   echo 'alert("Guardado con exito!");';
                   echo '</script>';

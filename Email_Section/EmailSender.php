@@ -8,7 +8,7 @@
     //Para realizar esto se debe modificar el mail function en php.ini
     //y en sendemail.ini
 
-    try{
+    try {
         //Crea un objeto datetime y obtiene el dia y fecha actual de la zona horaria America/Panama
         $dt = new DateTime("now", new DateTimeZone('America/Panama'));
         $fecha_hora = $dt->format('Y-m-d H:i'); //Formatea el dia y hora al estilo que yo quiera
@@ -22,76 +22,73 @@
         //Se executa la sentencia y se guarda en la variable $result convirtiendola en un arreglo de los valores obtenidos.
         $result = $conn->query($query)->fetch_assoc();
         //Codigo para verificar si las fechas concuerdan con el actual para enviar los correos electronicos
-        if($result){
+        if ($result) {
             //Verifica si la hora actual es igual que la hora de la consulta y que aun no ha sido enviado
-            if(!empty($result['fAnterior'])){
-                if(strtotime($result['fAnterior']) == strtotime($fecha_hora) && $result['idestado'] == 1 || strtotime($result['fAnterior']) < strtotime($fecha_hora) && $result['idestado'] == 1){
-                    try{
+            //Si la fecha_anterior no esta vacia entra en la siguiente condicion
+            if (!empty($result['fAnterior'])) {
+                if (strtotime($result['fAnterior']) == strtotime($fecha_hora) && $result['idestado'] == 1 || strtotime($result['fAnterior']) < strtotime($fecha_hora) && $result['idestado'] == 1) {
+                    try {
                         //Se le da formato a los correos elejidos a enviar para eliminar la ultima coma(,) que se guarda en
                         //la creacion del recordatorio
                         $correos = explode(",", $result['correos']);
                         $correos = implode(", ", $correos);
                         //Si el recordatorio se envia satisfactoriamente se actualiza el estado del recordatorio
-                        if(mail($correos, $result['asunto'], $result['mensaje'])){
+                        if (mail($correos, $result['asunto'], $result['mensaje'])) {
                             $query_anterior = $conn->query("UPDATE notificacion SET id_estado = 2 WHERE id_notificacion = " . $result['idnotificacion'] . ";");
                         }
-                    }catch (Exception $ex){
+                    } catch (Exception $ex) {
                         throw $ex->getMessage();
                     }
                 }
-            //Se obtiene el id_estado actualizado si se acaba de enviar un recordatorio
-            $actualizar_idestado = $conn->query("SELECT id_estado FROM notificacion WHERE id_notificacion = " . $result['idnotificacion'] . ";")->fetch_assoc();
-            //Se realiza el mismo proceso que el primero pero este se cumple si el id_estado es igual a 2 osea que ya
-            //se ha enviado el correo en la fecha anterior (fecha_anterior)
-            if(strtotime($result['fRepeticion']) == strtotime($fecha_hora) && $actualizar_idestado['id_estado'] == 2 || strtotime($result['fRepeticion']) < strtotime($fecha_hora) && $actualizar_idestado['id_estado'] == 2){
-                try{
-                    $correos = explode(",", $result['correos']);
-                    $correos = implode(", ", $correos);
-                    if(mail($correos, $result['asunto'], $result['mensaje'])){
-                        $query_repeticion = $conn->query("UPDATE notificacion SET id_estado = 3 WHERE id_notificacion = " . $result['idnotificacion'] . ";");
+                //Se obtiene el id_estado actualizado si se acaba de enviar un recordatorio
+                $actualizar_idestado = $conn->query("SELECT id_estado FROM notificacion WHERE id_notificacion = " . $result['idnotificacion'] . ";")->fetch_assoc();
+                //Se realiza el mismo proceso que el primero pero este se cumple si el id_estado es igual a 2 osea que ya
+                //se ha enviado el correo en la fecha anterior (fecha_anterior)
+                if (strtotime($result['fRepeticion']) == strtotime($fecha_hora) && $actualizar_idestado['id_estado'] == 2 || strtotime($result['fRepeticion']) < strtotime($fecha_hora) && $actualizar_idestado['id_estado'] == 2) {
+                    try {
+                        $correos = explode(",", $result['correos']);
+                        $correos = implode(", ", $correos);
+                        if (mail($correos, $result['asunto'], $result['mensaje'])) {
+                            $query_repeticion = $conn->query("UPDATE notificacion SET id_estado = 3 WHERE id_notificacion = " . $result['idnotificacion'] . ";");
+                        }
+                    } catch (Exception $ex) {
+                        throw $ex->getMessage();
                     }
-                }catch(Exception $ex){
-                    throw $ex->getMessage();
                 }
-            }
 
-            $actualizar_idestado2 = $conn->query("SELECT id_estado FROM notificacion WHERE id_notificacion = " . $result['idnotificacion'] . ";")->fetch_assoc();
-            //El mismo procedimiento que los anteriores
-            if(strtotime($result['fPrincipal']) == strtotime($fecha_hora) && $actualizar_idestado2['id_estado'] == 3 || strtotime($result['fPrincipal']) < strtotime($fecha_hora) && $actualizar_idestado2['id_estado'] == 3){
-                try{
-                    $correos = explode(",", $result['correos']);
-                    $correos = implode(", ", $correos);
-                    if(mail($correos, $result['asunto'], $result['mensaje'])){
-                        $query_principal = $conn->query("UPDATE notificacion SET id_estado = 4 WHERE id_notificacion = " . $result['idnotificacion'] . ";");
+                $actualizar_idestado2 = $conn->query("SELECT id_estado FROM notificacion WHERE id_notificacion = " . $result['idnotificacion'] . ";")->fetch_assoc();
+                //El mismo procedimiento que los anteriores
+                if (strtotime($result['fPrincipal']) == strtotime($fecha_hora) && $actualizar_idestado2['id_estado'] == 3 || strtotime($result['fPrincipal']) < strtotime($fecha_hora) && $actualizar_idestado2['id_estado'] == 3) {
+                    try {
+                        $correos = explode(",", $result['correos']);
+                        $correos = implode(", ", $correos);
+                        if (mail($correos, $result['asunto'], $result['mensaje'])) {
+                            $query_principal = $conn->query("UPDATE notificacion SET id_estado = 4 WHERE id_notificacion = " . $result['idnotificacion'] . ";");
+                        }
+                    } catch (Exception $ex) {
+                        throw $ex->getMessage();
                     }
-                }catch(Exception $ex){
-                    throw $ex->getMessage();
+                }
+            } else {
+                if (strtotime($result['fPrincipal']) == strtotime($fecha_hora) && $result['idestado'] == 1 || strtotime($result['fPrincipal']) < strtotime($fecha_hora) && $result['idestado'] == 1) {
+                    try {
+                        $correos = explode(",", $result['correos']);
+                        $correos = implode(", ", $correos);
+                        if (mail($correos, $result['asunto'], $result['mensaje'])) {
+                            $query_principal = $conn->query("UPDATE notificacion SET id_estado = 4 WHERE id_notificacion = " . $result['idnotificacion'] . ";");
+                        }
+                    } catch (Exception $ex) {
+                        throw $ex->getMessage();
+                    }
                 }
             }
-          }else{
-            if(strtotime($result['fPrincipal']) == strtotime($fecha_hora) && $result['idestado'] == 1 || strtotime($result['fPrincipal']) < strtotime($fecha_hora) && $result['idestado'] == 1){
-                try{
-                    $correos = explode(",", $result['correos']);
-                    $correos = implode(", ", $correos);
-                    if(mail($correos, $result['asunto'], $result['mensaje'])){
-                        $query_principal = $conn->query("UPDATE notificacion SET id_estado = 4 WHERE id_notificacion = " . $result['idnotificacion'] . ";");
-                    }
-                }catch(Exception $ex){
-                    throw $ex->getMessage();
-                }
-            }
-          }
-        }else{
+        } else {
             //Si no encuentra registros simplemente imprimira esto
             echo 'No hay Registros';
         }
-
     } catch (Exception $ex) {
         throw $ex->getMessage();
-
-    }finally{
-      //Finalmente se cierra la conexion a la base de datos al recorrer los procedimientos
+    } finally {
+        //Finalmente se cierra la conexion a la base de datos al recorrer los procedimientos
         $conn->close();
     }
-
-?>

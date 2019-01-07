@@ -47,6 +47,10 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
             <!-- DateTimePicker.js contiene la configuracion del formato de fecha y hora -->
             <script type="text/javascript" src="../JS/DateTimePicker.js"></script>
+            <!-- Se crea una caja de texto para ingresar un asunto personalizado -->
+            <label>Asunto:</label>
+            <input id="asunto_personal" name="asunto_personalizado" type="text" name="asuntorecordatorio"/>
+            <script type="text/javascript" src="../JS/ObtenerAsunto.js"></script>
             <!-- Se importa el selector de asunto del sistema -->
             <?php include '../Email_Section/Asunto.php'; ?>
             <textarea name="mensaje" id="mensaje" rows="10" cols="50" placeholder="Escriba su mensaje..." required></textarea><br>

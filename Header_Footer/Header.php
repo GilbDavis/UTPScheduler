@@ -28,7 +28,7 @@ if (empty($_SESSION["user_id"])) {
     <body>
         <header>
             <div class="wrapper">
-                <img src='../Imagenes/LOGO.png' alt='Logo LEMS'/>
+                <a href="<?php if($_SESSION['user_rol'] == 'Admin'){ echo '../SeccionAdmin/AdminMenu.php'; }else if($_SESSION['user_rol'] == 'Member'){ echo '../SeccionMember/MemberMenu.php'; } ?>"><img src='../Imagenes/LOGO.png' alt='Logo LEMS'/></a>
                 <div class="logo">
                     <a id="titulo" href="<?php if($_SESSION['user_rol'] == 'Admin'){ echo '../SeccionAdmin/AdminMenu.php'; }else if($_SESSION['user_rol'] == 'Member'){ echo '../SeccionMember/MemberMenu.php'; } ?>">Agenda LEMS 2018</a>
                 </div>
