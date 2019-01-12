@@ -36,9 +36,11 @@
               $sql1 = 'INSERT INTO correos(correo) VALUES ("' . $correosubs . '");';
               $db1 = $conn->query($sql1);
               $idcorreos = $conn->insert_id; //Obtiene el ultimo id insertado
+              //Convierte el formato de la hora a 24 horas para facilitar el envio del correo al sistema
+              $conversion_24horas  = date("Y-m-d H:i", strtotime($fecha));
               //Esta consulta inserta las fechas en que se enviara el recordatorio
               $sql2 = 'INSERT INTO fechas(fecha_principal, fecha_repeticion, fecha_anterior) '
-                    . 'VALUES ("' . $fecha . '", "' . $fecha_repeticion . '", "' .
+                    . 'VALUES ("' . $conversion_24horas . '", "' . $fecha_repeticion . '", "' .
                     $fecha_anterior . '");';
               $db2 = $conn->query($sql2);
               $idfechas = $conn->insert_id; //Obtiene el ultimo id insertado
@@ -68,9 +70,10 @@
               $sql1 = 'INSERT INTO correos(correo) VALUES ("' . $correo . '");';
               $db1 = $conn->query($sql1);
               $idcorreos = $conn->insert_id;
-
+              //Convierte el formato de la hora a 24 horas para facilitar el envio del correo al sistema
+              $conversion_24horas  = date("Y-m-d H:i", strtotime($fecha));
               $sql2 = 'INSERT INTO fechas(fecha_principal) '
-                    . 'VALUES ("' . $fecha . '");';
+                    . 'VALUES ("' . $conversion_24horas . '");';
               $db2 = $conn->query($sql2);
               $idfechas = $conn->insert_id;
 
